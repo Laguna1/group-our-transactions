@@ -3,7 +3,7 @@
 <h1>Transactions</h1>
 
     <% @transactions.first(1).each do |transaction| %>
-      <p>All: $<%= transaction.total_transaction %></p>
+      <p>Total amount: $<%= transaction.total_transaction %></p>
     <% end %>
 
    <% @transactions.each do |transaction| %>
@@ -23,4 +23,4 @@
   
   <% end %>
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'Add new', new_transaction_path, class: "btn btn-success" %>
