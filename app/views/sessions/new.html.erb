@@ -1,0 +1,14 @@
+ <h1>Log in</h1>
+
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: " mt-2 btn btn-primary" %>
+    <% end %>
+
+  
