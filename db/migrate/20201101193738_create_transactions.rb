@@ -3,7 +3,8 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
     create_table :transactions do |t|
       t.string :name
       t.integer :amount
-      t.references :user, null: false, foreign_key: true
+      t.integer "user_id"
+      t.integer "group_id"
 
       t.timestamps
     end

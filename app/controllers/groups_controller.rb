@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.order('name DESC')
+    @transactions = Transaction.all
   end
 
   # GET /groups/1

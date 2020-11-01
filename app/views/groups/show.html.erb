@@ -12,8 +12,32 @@
 
 <p>
   <strong>Created at:</strong>
-  <%= @group.created_at %>
+  <%= @group.created_at.strftime("%B %d %Y, %l:%M%P") %>
 </p>
+
+
+<% if @group.transactions.any? %>
+<p>All Transactions in <%= @group.name %></p>
+  <% @group.transactions.each do |transaction| %>
+
+        <%= link_to transaction do %>
+        <p></p> <%= transaction.name.capitalize %></p>
+
+      <p><%= transaction.created_at.strftime("%B %d %Y") %> from <%= transaction.user.name %></p>
+    
+    <% end %>
+  
+      <p>$<%= transaction.amount %></p><br>
+      <%= link_to "Show", transaction %> |
+      <%= link_to "Edit", edit_transaction_path(transaction) %> |
+      <%= link_to "Destroy", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
+  
+ 
+  <% end %>
+  <% else %>
+  <p>There are no transactions for this group.</p>
+  <% end %>
+
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

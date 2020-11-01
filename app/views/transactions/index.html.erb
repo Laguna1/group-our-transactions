@@ -8,14 +8,17 @@
 
    <% @transactions.each do |transaction| %>
 
-    <%= transaction.name %><br>
+    <%= transaction.name.capitalize %><br>
       <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %>
        <p>$<%= transaction.amount %></p>
        <%= link_to 'Show', transaction %>
+
+       <% if current_user.transactions.include?(@transaction) %>
         <%= link_to 'Edit', edit_transaction_path(transaction) %>
-       <%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
-     
+        <%= link_to 'Delete?', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+       
     <% end %>
   
+  <% end %>
 
 <%= link_to 'New Transaction', new_transaction_path %>

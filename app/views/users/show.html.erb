@@ -2,13 +2,14 @@
 <h1>"user#show"</h1>
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+ 
+ <h2><%= @user.name %></h2> 
 </p>
 <p>
-  <button>All My Transactions</button><br>
-  <button>All My External Transactions</button><br>
-  <button>All My Groups</button><br>
+  <%= link_to 'All my Transactions', transactions_path, class: "btn btn-success" %>
+  <%= link_to 'All my External Transactions', external_transactions_path, class: "btn btn-success" %>
+  
+  <%= link_to 'All my Groups', groups_path, class: "btn btn-success" %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
