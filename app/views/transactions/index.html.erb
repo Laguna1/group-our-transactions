@@ -1,31 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'New Transaction', new_transaction_path %>
 
 <h1>Transactions</h1>
 
-<table>
-  <thead>
-    <tr>
-     <th>Name</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @transactions.each do |transaction| %>
-      <tr>
-        <td><%= transaction.name %></td>
-        <td><%= transaction.amount %></td>
-        <td><%= transaction.user_id %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @transactions.first(1).each do |transaction| %>
+      <p>$<%= transaction.total_transaction %></p>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+   <% @transactions.each do |transaction| %>
+
+    <%= transaction.name %><br>
+      <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %>
+       <p>$<%= transaction.amount %></p>
+       <%= link_to 'Show', transaction %>
+        <%= link_to 'Edit', edit_transaction_path(transaction) %>
+       <%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+     
+    <% end %>
+  
 
 <%= link_to 'New Transaction', new_transaction_path %>

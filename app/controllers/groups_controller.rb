@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
-    @group = Group.new
+    @group = current_user.groups.build
   end
 
   # GET /groups/1/edit
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
 
     respond_to do |format|
       if @group.save

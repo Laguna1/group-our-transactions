@@ -1,10 +1,12 @@
 class TransactionsController < ApplicationController
+  before_action :require_auth, expect: %i[new create edit update destroy]
   before_action :set_transaction, only: %i[show edit update destroy]
 
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.all.order('created_at DESC')
+    @groups = Group.all
   end
 
   # GET /transactions/1
@@ -13,7 +15,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+    @transaction = current_user.transactions.build
   end
 
   # GET /transactions/1/edit
@@ -22,7 +24,7 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = current_user.transactions.build(transaction_params)
 
     respond_to do |format|
       if @transaction.save
@@ -68,6 +70,6 @@ class TransactionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def transaction_params
-    params.require(:expense).permit(:name, :amount, :user_id)
+    params.require(:transaction).permit(:name, :amount, :group_id)
   end
 end
