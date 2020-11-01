@@ -2,13 +2,13 @@
 
 <h1>Groups</h1>
   <% @groups.each do |group| %>
-      <%= image_tag group.icon.url if group.icon? %>
-      <%= group.name %><br>
+    <p> <%= image_tag group.icon.url if group.icon? %>
+      <%= link_to group.name, group %><br>
       <%= group.created_at %>
-      <%= link_to 'Show', group %>
-        <%= link_to 'Edit', edit_group_path(group) %>
+      <%= link_to 'Edit', edit_group_path(group) %>
       <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
      
     <% end %>
-
+    </p> 
+<br>
 <%= link_to 'New Group', new_group_path %>

@@ -3,16 +3,18 @@
 <h1>Transactions</h1>
 
     <% @transactions.first(1).each do |transaction| %>
-      <p>$<%= transaction.total_transaction %></p>
+      <p>All: $<%= transaction.total_transaction %></p>
     <% end %>
 
    <% @transactions.each do |transaction| %>
-
+    <%= link_to transaction do %>
     <%= transaction.name.capitalize %><br>
+    <% end %>
       <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %>
-       <p>$<%= transaction.amount %></p>
-       <%= link_to 'Show', transaction %>
 
+       <p>$<%= transaction.amount %></p>
+      
+   
        <% if current_user.transactions.include?(@transaction) %>
         <%= link_to 'Edit', edit_transaction_path(transaction) %>
         <%= link_to 'Delete?', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>

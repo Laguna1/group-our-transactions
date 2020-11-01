@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= link_to "Add New External Transaction", new_external_transaction_path %>
 
 <h1>External Transactions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @external_transactions.each do |external_transaction| %>
-      <tr>
-        <td><%= link_to 'Show', external_transaction %></td>
-        <td><%= link_to 'Edit', edit_external_transaction_path(external_transaction) %></td>
-        <td><%= link_to 'Destroy', external_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+ <% @external_transactions.first(1).each do |external_transaction| %>
+    <p>$<%= external_transaction.total_ex %></p>
     <% end %>
-  </tbody>
-</table>
+
+
+    <% @external_transactions.each do |external_transaction| %>
+         <%= link_to external_transaction do %>
+     <% end %>
+
+
+         <p>$<%= external_transaction.amount %></p><br>
+        <%= link_to 'Show', external_transaction %>
+        <%= link_to 'Edit', edit_external_transaction_path(external_transaction) %>
+       <%= link_to 'Destroy', external_transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+     
+    <% end %>
+  
 
 <br>
 

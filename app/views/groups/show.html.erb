@@ -14,18 +14,17 @@
   <strong>Created at:</strong>
   <%= @group.created_at.strftime("%B %d %Y, %l:%M%P") %>
 </p>
-
-
+ 
 <% if @group.transactions.any? %>
 <p>All Transactions in <%= @group.name %></p>
   <% @group.transactions.each do |transaction| %>
 
         <%= link_to transaction do %>
-        <p></p> <%= transaction.name.capitalize %></p>
-
-      <p><%= transaction.created_at.strftime("%B %d %Y") %> from <%= transaction.user.name %></p>
+        <p><%= transaction.name.capitalize %></p>
+         <% end %>
+      <p><%= transaction.created_at.strftime("%B %d %Y") %> by<%= transaction.user.name %></p>
     
-    <% end %>
+    
   
       <p>$<%= transaction.amount %></p><br>
       <%= link_to "Show", transaction %> |
