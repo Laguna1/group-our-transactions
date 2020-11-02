@@ -6,10 +6,9 @@
  <h2><%= @user.name %></h2> 
 </p>
 <p>
-  <%= link_to 'All my Transactions', transactions_path, class: "btn btn-success" %>
-  <%= link_to 'All my External Transactions', external_transactions_path, class: "btn btn-success" %>
-  
-  <%= link_to 'All my Groups', groups_path, class: "btn btn-success" %>
+  <%= link_to 'All Transactions', transactions_path, class: "btn btn-success" %>
+  <%= link_to 'AllExternal Transactions', external_path, class: "btn btn-success" %>
+  <%= link_to 'All Groups', groups_path, class: "btn btn-success" %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

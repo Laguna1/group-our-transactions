@@ -24,16 +24,15 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = current_user.transactions.build(transaction_params)
-
-    respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
+    @transaction = current_user.transactions.new(transaction_params)
+    if @transaction.save
+      if @transaction.group_id.nil?
+        redirect_to external_path, notice: 'External ransaction was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+        redirect_to transactions_path, notice: 'Transaction was successfully created.'
       end
+    else
+      render :new
     end
   end
 

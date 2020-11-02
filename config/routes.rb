@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :external_transactions
+  get '/external', to: 'pages#external'
   resources :groups
   resources :transactions
   get "login", to: "sessions#new"

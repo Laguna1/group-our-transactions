@@ -3,15 +3,16 @@
 <h1>Groups</h1>
   <% @groups.each do |group| %>
 
-    <p> <%= image_tag group.icon.url if group.icon? %>
+  
       <%= link_to group.name.capitalize, group %><br>
+     
       <%= group.created_at.strftime("%B %d %Y, %l:%M%P") %>
-
+        
     <% if current_user.id == group.user.id %> 
        <%= link_to 'Edit', edit_group_path(group) %>
-       <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %><br>
      <% end %>
     <% end %>
-    </p> 
+    </p> <br>
 <br>
 <%= link_to 'Create New Group', new_group_path, class: "btn btn-lg btn-success" %>
