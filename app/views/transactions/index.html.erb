@@ -1,4 +1,4 @@
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'Add New', new_transaction_path %>
 
 <h1>Transactions</h1>
 
@@ -15,7 +15,7 @@
        <p>$<%= transaction.amount %></p>
       
    
-       <% if current_user.transactions.include?(@transaction) %>
+       <% if current_user.id == transaction.user.id%>
         <%= link_to 'Edit', edit_transaction_path(transaction) %>
         <%= link_to 'Delete?', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
        
@@ -23,4 +23,4 @@
   
   <% end %>
 
-<%= link_to 'Add new', new_transaction_path, class: "btn btn-success" %>
+<%= link_to 'Add new', new_transaction_path, class: "btn btn-lg btn-success" %>
