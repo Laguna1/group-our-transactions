@@ -4,6 +4,8 @@ class Transaction < ApplicationRecord
 
   has_many :groups
 
+  validates :name, :amount, :group_id, presence: true
+
   def total_transaction
     Transaction.sum(:amount)
   end
