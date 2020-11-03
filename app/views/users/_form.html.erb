@@ -1,32 +1,34 @@
-<%= form_with(model: user, local: true) do |form| %>
+
+<%= form_for(user, :html => { class: "contact"}) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group form-icons ">
+    <span class="fa fa-user"></span>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name*" %>
   </div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+  <div class="form-group form-icons">
+    <span class="fa fa-user"></span>
+    <%= f.text_field :username, class: "form-control", placeholder: "Username*"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+  <div class="form-group form-icons">
+    <span class="fa fa-paper-plane"></span>
+    <%= f.email_field :email, class: "form-control", placeholder: "Your Email*" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+ 
+  <div class="form-group form-icons">
+       <span class="fa fa-sign-in"></span>
+      <%= f.button "SUBMIT", class: "btn btn-danger btn-lg", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
   </div>
 <% end %>

@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  <%= icon('thumbs-up', 'It Worked!!!', id: 'my-icon', class: 'fa-5x') %>
   <% if logged_in? %>
           <%= link_to "Profile", user_path(current_user) %> |
           <%= link_to "Log out", logout_path, method: :delete %>
