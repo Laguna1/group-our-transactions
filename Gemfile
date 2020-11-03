@@ -68,7 +68,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec'
-  
+
   gem 'shoulda-matchers'
 end
 

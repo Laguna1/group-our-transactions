@@ -6,7 +6,7 @@ RSpec.describe Transaction, type: :model do
     it { should validate_presence_of(:amount) }
   end
   describe 'associations to test' do
-    it { should belong_to(:user)}
-    it { should belong_to(:group).optional}
+    it { should belong_to(:user) }
+    it { should belong_to(:group).optional }
   end
 end
