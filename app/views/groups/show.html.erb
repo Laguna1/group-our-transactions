@@ -1,43 +1,29 @@
 <p id="notice"><%= notice %></p>
-
-
-
  <h2>"<%= @group.name %>"</h2>
-
-
-<p>
-  <strong>Icon:</strong>
- <%= @group.icon %>
-</p>
-
 <p>
   <strong>Created at:</strong>
-  <%= @group.created_at.strftime("%B %d %Y, %l:%M%P") %>
+  <%= @group.created_at %>
 </p>
- 
-
-
  
 <% if @group.transactions.any? %>
 <p>All Transactions in <%= @group.name %></p>
   <% @group.transactions.each do |transaction| %>
-
-        <%= link_to transaction do %>
+ <%= link_to transaction do %>
         <p><%= transaction.name.capitalize %></p>
          <% end %>
-      <p><%= transaction.created_at %> by <strong><%= transaction.user.name %></strong></p>
+         
+      <p><%= transaction.created_at %> by <strong>
+      <%= transaction.user.name %></strong></p>
     <p>$<%= transaction.amount %></p><br>
       <%= link_to "Show", transaction %> |
       <% if current_user.id == transaction.user.id %>
         <%= link_to "Edit", edit_transaction_path(transaction) %> |
         <%= link_to "Destroy", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
- 
   <% end %>
   <% else %>
   <p>There are no transactions for this group.</p>
   <% end %>
-
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
