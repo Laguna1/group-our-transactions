@@ -3,24 +3,22 @@
 <h1>Transactions</h1>
 
     <% @transactions.first(1).each do |transaction| %>
-      <p>Total amount: $<%= transaction.total_transaction %></p>
+      <p><strong>Total amount: $<%= transaction.total_transaction %></strong></p>
     <% end %>
 
    <% @transactions.each do |transaction| %>
     <%= link_to transaction do %>
     <%= transaction.name.capitalize %><br>
     <% end %>
-      <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %>
+      <p>$<%= transaction.amount %></p>
+      <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %><br>
 
-       <p>$<%= transaction.amount %></p>
-      
-   
        <% if current_user.id == transaction.user.id%>
         <%= link_to 'Edit', edit_transaction_path(transaction) %>
         <%= link_to 'Delete?', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
-       
+      
     <% end %>
-  
+   <br> <br>
   <% end %>
 
 <%= link_to 'Add new', new_transaction_path, class: "btn btn-lg btn-success" %>

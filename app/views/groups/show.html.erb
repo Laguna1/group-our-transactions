@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-<h2>"Group transactions" page</h2>
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+
+
+
+ <h2>"<%= @group.name %>"</h2>
+
 
 <p>
   <strong>Icon:</strong>
@@ -22,7 +22,7 @@
         <%= link_to transaction do %>
         <p><%= transaction.name.capitalize %></p>
          <% end %>
-      <p><%= transaction.created_at.strftime("%B %d %Y") %> by<%= transaction.user.name %></p>
+      <p><%= transaction.created_at.strftime("%B %d %Y") %> by <%= transaction.user.name %></p>
     
     
   
