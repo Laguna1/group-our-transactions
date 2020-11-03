@@ -12,6 +12,7 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'faker'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -42,6 +43,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -61,10 +64,9 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rspec'
-  gem 'rspec-rails', '~> 3.6'
+  
   gem 'shoulda-matchers'
 end
 
