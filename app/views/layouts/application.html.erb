@@ -6,12 +6,14 @@
     <%= csp_meta_tag %>
 
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
-  <%= icon('thumbs-up', 'It Worked!!!', id: 'my-icon', class: 'fa-5x') %>
+  <span class="fa fa-home" aria-hidden="true"></span>
   <% if logged_in? %>
           <%= link_to "Profile", user_path(current_user) %> |
           <%= link_to "Log out", logout_path, method: :delete %>
