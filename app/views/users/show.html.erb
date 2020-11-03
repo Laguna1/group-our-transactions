@@ -3,7 +3,10 @@
 <p id="notice"><%= notice %></p>
 <p>
  
- <h2><%= @user.name %></h2> 
+ <h2>
+<%= user_gravatar @user %>
+ <%= @user.name %>
+ </h2> 
 </p>
 <p>
   <a href="#">Account Settings<a>
