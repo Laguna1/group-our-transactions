@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import "font-awesome-sprockets";
-@import 'font_awesome5.css';
+
 
 // Bootstrap styles
 
@@ -11,6 +11,40 @@ $focus_border: #555555;
 %focus {
     background-color: $focus_background;
     border: 1px solid $focus_border; 
+}
+
+body {
+    background-color: rgb(241,243,242);
+    text-align: center;
+    font-family: "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 90vh;
+    margin: 0;
+}
+ 
+a,  a:visited {
+    color: black !important;
+}
+
+a:hover, a:active {
+    color: rgb(63, 32, 148) !important;
+}
+
+i > a,
+.btn a {
+    font-size: 1em !important;
+    color: whitesmoke !important;
+}
+
+.start-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 15;
+}
+
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
 }
 
 .contact .form-control {
@@ -81,10 +115,4 @@ $focus_border: #555555;
         left: 16px;
         font-size: 18px;
             color: white; }
-}
-
-.start-page {
-    margin: 0 15%;
-    border: 1px solid red;
-    text-align: center;
 }

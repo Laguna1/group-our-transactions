@@ -1,15 +1,16 @@
-<div class="container start-page">
-<div></div>
- <h1>Project Name Italic</h1>
-<div class="container text-center">
-<p>Already have account?  <i class="fa fa-sign-in">
-<%= link_to "Log in", login_path %>
-</i>
-</p>
-<p>New account
-<i class="fa fa-sign-in">
- <%= link_to "Sign up", new_user_path %>
- </i>
- </p>
-<div>
+<div class="container start-page h-100">
+   <div class="h-50">
+      <div class="h1 text-center main-title">Project Name Italic</div>
+
+      <div class="text-center text-uppercase mt-5 px-2">
+          <div class="btn btn-block btn-lg btn-success shadow p-3 mb-1 rounded">
+         <i class="fa fa-sign-in">
+          <%= link_to "Log in", login_path, :class => "btn" %></i>
+          </div>
+          <div class="btn btn-block btn-lg btn-primary shadow p-3 mb-2 rounded">
+         <i class="fa fa-sign-in">
+          <%= link_to "Sign up", new_user_path, :class => "btn"  %></i>
+       </div>
+    </div>
+    </div>
 </div>
