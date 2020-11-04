@@ -14,7 +14,7 @@ $focus_border: #555555;
 }
 
 body {
-    background-color: rgb(241,243,242);
+    background-color: rgb(227, 233, 231);
     text-align: center;
     font-family: "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 90vh;
@@ -116,3 +116,7 @@ i > a,
         font-size: 18px;
             color: white; }
 }
+
+.form-rounded {
+    border-radius: 1rem;
+    }

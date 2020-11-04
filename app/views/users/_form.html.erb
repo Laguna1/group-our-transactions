@@ -12,6 +12,7 @@
     </div>
   <% end %>
 
+<div class="form-around">
   <div class="form-group form-icons text-center">
     <span class="fa fa-user"></span>
     <%= f.text_field :name, class: "form-control", placeholder: "Name*" %>
@@ -28,8 +29,9 @@
   </div>
  
   <div class="form-group form-icons text-center">
-       <span class="fa fa-sign-in"></span>
-      <%= f.button "SUBMIT", class: "btn btn-danger btn-lg text-center", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
+       
+      <%= f.button "SUBMIT", class: "btn btn-primary btn-block btn-lg text-center", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
   </div>
   <% end %>
+</div>
 </div>
