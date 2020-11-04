@@ -1,21 +1,27 @@
-
+<div class="container text-center">
      <h2> External transactions</h2> 
      <p>
         Total amount: $ <%= @external_total %>
      </p>
      <p>
         <% @external_transactions.each do |transaction| %>
-    <hr>
+   
               <p> <%=link_to transaction.name %> </p>
               <p>$<%= transaction.amount %></p>
               <p><%= transaction.created_at %></p>
               <br>
-              <%= link_to "Edit", edit_transaction_path(transaction) %>  |
+              <i class="fa fa-edit">
+              <%= link_to "Edit", edit_transaction_path(transaction) %></i>  |
+              <i class="fa fa-trash">
               <%= link_to "Delete", transaction_path(transaction), data: {confirm: "Are you sure?"}, :method => :delete %>
+              </i>
         <br> <br>
+         <hr><hr>
     <% end %>
      <br> 
+    
   <p>
  
-  <hr>
+
   <%= link_to "Add new", new_transaction_path , :class => "btn btn-success" %>
+</div>

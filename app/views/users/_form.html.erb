@@ -1,6 +1,6 @@
-
-<%= form_for(user, :html => { class: "contact"}) do |f| %>
-  <% if user.errors.any? %>
+<div class="container text-center">
+  <%= form_for(user, :html => { class: "contact"}) do |f| %>
+    <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
@@ -12,23 +12,24 @@
     </div>
   <% end %>
 
-  <div class="form-group form-icons ">
+  <div class="form-group form-icons text-center">
     <span class="fa fa-user"></span>
     <%= f.text_field :name, class: "form-control", placeholder: "Name*" %>
   </div>
 
-  <div class="form-group form-icons">
+  <div class="form-group form-icons text-center">
     <span class="fa fa-user"></span>
     <%= f.text_field :username, class: "form-control", placeholder: "Username*"  %>
   </div>
 
-  <div class="form-group form-icons">
+  <div class="form-group form-icons text-center">
     <span class="fa fa-paper-plane"></span>
     <%= f.email_field :email, class: "form-control", placeholder: "Your Email*" %>
   </div>
  
-  <div class="form-group form-icons">
+  <div class="form-group form-icons text-center">
        <span class="fa fa-sign-in"></span>
-      <%= f.button "SUBMIT", class: "btn btn-danger btn-lg", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
+      <%= f.button "SUBMIT", class: "btn btn-danger btn-lg text-center", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
   </div>
-<% end %>
+  <% end %>
+</div>

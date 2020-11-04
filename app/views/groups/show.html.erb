@@ -1,3 +1,4 @@
+<div class="container text-center">
 <p id="notice"><%= notice %></p>
  <h2>"<%= @group.name %>"</h2>
 <p>
@@ -16,13 +17,21 @@
       <p><%= transaction.created_at %>
     <%= link_to "Show this transaction", transaction %> |
       <% if current_user.id == transaction.user.id %>
-        <%= link_to "Edit", edit_transaction_path(transaction) %> |
+      <i class="fa fa-edit">
+        <%= link_to "Edit", edit_transaction_path(transaction) %> 
+        </i>|
+        <i class="fa fa-trash">
         <%= link_to "Destroy", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
+        </i>
       <% end %>
   <% end %>
   <% else %>
   <p>There are no transactions for this group.</p>
   <% end %>
-
-<%= link_to 'Edit group', edit_group_path(@group) %> |
+<i class="fa fa-edit">
+<%= link_to 'Edit group', edit_group_path(@group) %> 
+</i>|
+<i class="fa fa-backward">
 <%= link_to 'Back to Groups list', groups_path %>
+</i>
+</div>

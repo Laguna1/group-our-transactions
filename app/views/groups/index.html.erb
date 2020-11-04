@@ -1,3 +1,4 @@
+ <div class="container text-center">
  |  <%= link_to 'New Group', new_group_path %>
 
 <h1>Groups</h1>
@@ -9,10 +10,16 @@
       <%= group.created_at %>
         
     <% if current_user.id == group.user.id %> 
+      <i class="fa fa-edit">
        <%= link_to 'Edit', edit_group_path(group) %>
+       </i>
+       <i class="fa fa-trash">
        <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+       </i>
      <% end %>
+     <hr><hr>
     <% end %>
     </p> <br>
 <br>
 <%= link_to 'Create New Group', new_group_path, class: "btn btn-lg btn-success" %>
+</div>

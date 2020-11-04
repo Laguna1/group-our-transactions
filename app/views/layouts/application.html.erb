@@ -13,13 +13,21 @@
   </head>
 
   <body>
-  <span class="fa fa-home" aria-hidden="true"></span>
+  
   <% if logged_in? %>
-          <%= link_to "Profile", user_path(current_user) %> |
-          <%= link_to "Log out", logout_path, method: :delete %>
+  <i class="fa fa-user-circle">
+          <%= link_to "Profile", user_path(current_user) %> 
+          </i> |
+          <i class="fa fa-sign-out">
+        <%= link_to "Log out", logout_path, method: :delete %>
+        </i>
         <% else %>
-          <%= link_to "Sign Up", new_user_path %>  |
+        <i class="fa fa-sign-in">
+          <%= link_to "Sign Up", new_user_path %>
+          </i>   |
+          <i class="fa fa-sign-in">
           <%= link_to "Log in", login_path %> 
+          </i>
        <% end %>
   
     <%= yield %>

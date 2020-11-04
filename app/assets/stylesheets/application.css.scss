@@ -1,5 +1,4 @@
 @import "bootstrap";
-@import "rails_bootstrap_forms";
 @import "bootstrap-sprockets";
 @import "font-awesome-sprockets";
 @import 'font_awesome5.css';
@@ -16,7 +15,7 @@ $focus_border: #555555;
 
 .contact .form-control {
     display: block;
-    width: 60%;
+    width: 100%;
     height: 46px;
     padding: 6px 16px;
     font-size: 14px;
@@ -82,4 +81,10 @@ $focus_border: #555555;
         left: 16px;
         font-size: 18px;
             color: white; }
+}
+
+.start-page {
+    margin: 0 15%;
+    border: 1px solid red;
+    text-align: center;
 }

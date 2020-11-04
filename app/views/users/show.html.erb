@@ -1,18 +1,23 @@
-
+<div class="container text-center">
 <h1>"user#show"</h1>
 <p id="notice"><%= notice %></p>
 <p>
  
  <h2>
-<%= user_gravatar @user %>
+<%= user_gravatar @user %><br>
  <%= @user.name %>
  </h2> 
 </p>
 <p>
-  <a href="#">Account Settings<a>
-  <%= link_to 'All Transactions', transactions_path, class: "btn btn-success" %>
-  <%= link_to 'AllExternal Transactions', external_path, class: "btn btn-success" %>
-  <%= link_to 'All Groups', groups_path, class: "btn btn-success" %>
+  <a href="#"  class="btn btn-lg btn-success my-1">Account Settings<a><br>
+  <%= link_to 'All Transactions', transactions_path, class: "btn btn-lg btn-success my-1" %><br>
+  <%= link_to 'AllExternal Transactions', external_path, class: "btn btn-lg btn-success my-1" %><br>
+  <%= link_to 'All Groups', groups_path, class: "btn btn-lg btn-success my-1" %><br>
 </p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<i class="fa fa-edit"></i>
+<%= link_to 'Edit', edit_user_path(@user) %>
+</i> |
+<i class="fas fa-backward">
 <%= link_to 'Back', users_path %>
+</i>
+</div>

@@ -10,7 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'bootstrap_form'
+gem 'bootstrap'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker'
 gem 'font-awesome-sass', '~> 4.7.0'

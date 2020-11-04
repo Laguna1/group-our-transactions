@@ -1,3 +1,4 @@
+<div class="container text-center">
 <%= form_for @group do |f| %>
   <% if @group.errors.any? %>
     <ul>
@@ -8,26 +9,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name for group*"  %>
    </div>
   <div class="field">
-    <%= f.radio_button :icon, 'fa fa-phone' %><i class="fa fa-phone" aria-hidden="true"></i>
-   
-    <%= f.radio_button :icon, 'fa fa-graduation-cap' %> <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-    <%= f.radio_button :icon, 'fa fa-birthday-cake' %><i class="fa fa-birthday-cake" aria-hidden="true"></i><br />
-    <%= f.radio_button :icon, 'fa fa-bed' %> <i class="fa fa-bed" aria-hidden="true"></i>
-    <%= f.radio_button :icon, 'fa fa-cutlery' %> <i class="fa fa-cutlery" aria-hidden="true"></i>
-   
-    <%= f.radio_button :icon, 'fa fa-shopping-cart' %> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-    <%= f.radio_button :icon, 'fa fa-tree' %> <i class="fa fa-tree" aria-hidden="true"></i>
-    <%= f.radio_button :icon, 'fa fa-bus' %><i class="fa fa-bus" aria-hidden="true"></i>
-    <%= f.radio_button :icon, 'fa fa-taxi' %> <i class="fa fa-taxi aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-phone' %><i class="fa fa-phone mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-graduation-cap' %> <i class="fa fa-graduation-cap mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-birthday-cake' %><i class="fa fa-birthday-cake mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-bed' %> <i class="fa fa-bed mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-cutlery' %> <i class="fa fa-cutlery mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-shopping-cart' %> <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-tree' %> <i class="fa fa-tree mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-bus' %><i class="fa fa-bus mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-taxi' %> <i class="fa fa-taxi mx-3" aria-hidden="true"></i>
     
   </p>
   <%= f.submit class: "submit btn btn-success" %>
 
-
+</div>
 <!--
 
 <% end %><%= form_with(model: group, local: true) do |form| %>

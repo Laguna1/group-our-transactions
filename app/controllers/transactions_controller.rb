@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     @transactions = Transaction.all.order('created_at DESC')
-    @transactions = current_user.transactions.all.where.not(group_id: nil).order('created_at DESC')
+    @transactionss = current_user.transactions.all.where.not(group_id: nil).order('created_at DESC')
   end
 
   # GET /transactions/1

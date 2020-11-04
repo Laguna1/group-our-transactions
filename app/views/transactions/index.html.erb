@@ -1,8 +1,9 @@
+<div class="container text-center">
 <%= link_to 'Add New', new_transaction_path %>
 
 <h1>Transactions</h1>
 
-    <% @transactions.first(1).each do |transaction| %>
+    <% @transactionss.each do |transaction| %>
       <p><strong>Total amount: $<%= transaction.total_transaction %></strong></p>
     <% end %>
 
@@ -11,14 +12,18 @@
     <%= transaction.name.capitalize %><br>
     <% end %>
       <p>$<%= transaction.amount %></p>
-      <%= transaction.created_at.strftime("%B %d %Y, %l:%M%P") %><br>
+      <%= transaction.created_at%><br>
 
        <% if current_user.id == transaction.user.id%>
+       <i class="fa fa-edit">
         <%= link_to 'Edit', edit_transaction_path(transaction) %>
-        <%= link_to 'Delete?', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
-      
+        </i> |
+        <i class="fa fa-trash">
+        <%= link_to '', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </i>
     <% end %>
-   <br> <br>
+   <br> <hr><hr>
   <% end %>
 
 <%= link_to 'Add new', new_transaction_path, class: "btn btn-lg btn-success" %>
+</div>
