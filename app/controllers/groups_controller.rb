@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @group = current_user.groups.find(params[:id])
+    @groups = Group.all.order('name ASC')
     @transaction = @group.transactions
     @total = @transaction.sum(:amount)
   end
