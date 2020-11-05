@@ -8,19 +8,17 @@
 <p>
  
  <div class="my-5">
-    <%= user_gravatar @user %><br>
+    <%= user_gravatar @user , size: 150 %><br>
  </div> 
    <div class="user_show">
-  <%= link_to 'All Transactions', transactions_path, class: "btn btn-lg btn-block btn-success" %><br>
-  <%= link_to 'AllExternal Transactions', external_path, class: "btn btn-lg btn-block btn-success" %><br>
-  <%= link_to 'All Groups', groups_path, class: "btn btn-lg btn-block btn-success" %><br>
+  <%= link_to 'Transactions', transactions_path, class: "btn btn-lg btn-block btn-success text-uppercase" %><br>
+  <%= link_to 'External Transactions', external_path, class: "btn btn-lg btn-block btn-success text-uppercase" %><br>
+  <%= link_to 'Groups', groups_path, class: "btn btn-lg btn-block btn-success text-uppercase" %><br>
 </div>
 <div class="mt-3 display-6 text-white">
-<i class="fa fa-edit"></i>
-<%= link_to 'Edit', edit_user_path(@user) %>
-</i> |
-<i class="fa fa-backward"></i>
-<%= link_to 'All Users', users_path %>   <!-- root_path -->
+
+<i class="fa fa-backward text-primary"></i>
+<%= link_to 'BACK/All Users', users_path %>   <!-- root_path -->
 
 </div>
 </div>
