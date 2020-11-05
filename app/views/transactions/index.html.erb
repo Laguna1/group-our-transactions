@@ -1,24 +1,28 @@
-<div class="container text-center">
-<%= link_to 'Add New', new_transaction_path %>
-
-<h1>Transactions</h1>
-
-    <% @transactionss.each do |transaction| %>
-      <p><strong>Total amount: $<%= transaction.total_transaction %></strong></p>
-    <% end %>
-
+<div class="text-center">
+  <div class="display-4 py-2 header text-bold">
+     <span>
+         Transactions
+      </span><br>
+     <span>Total amount:
+        <% @transactions.first(1).each do |transaction| %>
+          <strong> $<%= transaction.total_transaction %></strong>
+            <% end %>
+     </span>
+  </div>
    <% @transactions.each do |transaction| %>
+   <span class="h3">
     <%= link_to transaction do %>
-    <%= transaction.name.capitalize %><br>
+    <%= transaction.name.capitalize %>
+    </span><br>
     <% end %>
-      <p>$<%= transaction.amount %></p>
+      <span>$<%= transaction.amount %></span>
       <%= transaction.created_at%><br>
 
        <% if current_user.id == transaction.user.id%>
-       <i class="fa fa-edit">
-        <%= link_to 'Edit', edit_transaction_path(transaction) %>
-        </i> |
-        <i class="fa fa-trash">
+       <i class="fa fa-edit fa-2x  text-warning">
+        <%= link_to '', edit_transaction_path(transaction) %>
+        </i> ||
+        <i class="fa fa-trash fa-2x  text-warning">
         <%= link_to '', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
       </i>
     <% end %>
