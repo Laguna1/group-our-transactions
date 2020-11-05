@@ -1,33 +1,46 @@
 <div class="text-center">
-  <div class="display-4 py-2 header text-bold">
+  <div class="display-3 py-2 header text-bold">
      <span>
          Transactions
-      </span><br>
-     <span>Total amount:
+         </span><br>
+     <span class="h5 text-uppercase">Total amount:
         <% @transactions.first(1).each do |transaction| %>
-          <strong> $<%= transaction.total_transaction %></strong>
+          <span class="h4 font-weight-bold"> $<%= transaction.total_transaction %></span>
             <% end %>
      </span>
   </div>
-   <% @transactions.each do |transaction| %>
-   <span class="h3">
-    <%= link_to transaction do %>
-    <%= transaction.name.capitalize %>
-    </span><br>
-    <% end %>
-      <span>$<%= transaction.amount %></span>
-      <%= transaction.created_at%><br>
-
-       <% if current_user.id == transaction.user.id%>
-       <i class="fa fa-edit fa-2x  text-warning">
-        <%= link_to '', edit_transaction_path(transaction) %>
-        </i> ||
-        <i class="fa fa-trash fa-2x  text-warning">
-        <%= link_to '', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </i>
-    <% end %>
-   <br> <hr><hr>
-  <% end %>
-
-<%= link_to 'Add new', new_transaction_path, class: "btn btn-lg btn-success" %>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+     <tr>
+        <td><%= link_to transaction do %>
+               <%= transaction.name.capitalize %><br>
+            <% end %></td>
+        <td>$<%= transaction.amount %></td>
+        <td><%= transaction.created_at%></td>
+        <td> <% if current_user.id == transaction.user.id%>
+            <i class="fa fa-edit fa-2x  text-warning">
+               <%= link_to '', edit_transaction_path(transaction) %>
+               </i> ||
+               <i class="fa fa-trash fa-2x  text-warning">
+               <%= link_to '', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+               </i>
+        </td>
+            <% end %>
+     </tr>
+     <% end %>
+  </tbody>
+     
+</table>
+</div>
+<%= link_to 'Add Transaction', new_transaction_path, class: "btn btn-lg btn-block btn-success" %>
 </div>
