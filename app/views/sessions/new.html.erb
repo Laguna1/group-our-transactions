@@ -1,15 +1,22 @@
-<div class="container text-center">
-<h1>"sessions#new"</h1>
-<%= form_for(:session, url: login_path) do |f| %>
+<div class="container text-center mt-5">
+<div class="h3 py-2 text-success text-capitalize"><i class="fa fa-user mx-2"></i>log in
+  
+  </div>
+<%= form_for(:session, url: login_path, :html => { class: "contact"}) do |f| %>
 
-  <div class="form-group form-icons ">
-    <i class="fa fa-user"></i>
-      <%= f.text_field :username, class: "form-control", placeholder: "Username* " %>
-   </div>
+  <div class="form-group form-icons text-center">
+    <span class="fa fa-user"></span>
+    <%= f.text_field :username, class: "form-control", placeholder: "Username*"  %>
+  </div>
    <div class="form-group form-icons">
-       <i class="fa fa-sign-in"></i>
-      <%= f.submit "Log in", class: "btn btn-primary btn-lg text-center" %>
+       
+      <%= f.submit "LOG IN", class: "btn btn-success btn-block btn-lg text-center" %>
       </div>
     <% end %>
+  <div class="text-success">
+       <i class="fa fa-backward login_page">
+         <%= link_to 'Back', root_path %>
+      </i>
+    </div>
 
 </div>

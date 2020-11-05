@@ -1,8 +1,13 @@
 <div class="container text-center mt-5">
-<div class="h2 py-2 text-primary">New Account</div>
+<div class="h2 py-2 text-primary">
+  <i class="fa fa-user mx-2"></i>
+    New Account
+  </div>
 
 <%= render 'form', user: @user %>
-<i class="fa fa-backward">
-<%= link_to 'Back', login_path %>
+<div class="text-primary">
+<i class="fa fa-backward signup_page">
+ <%= link_to 'Back', root_path %>
 </i>
+</div>
 </div>

@@ -35,6 +35,16 @@ i > a,
     color: whitesmoke !important;
 }
 
+.signup_page > a {
+    font-size: 1.25rem;
+    color: #017BFF !important;
+}
+
+.login_page > a {
+    font-size: 1.25rem;
+    color: rgb(39,167,69) !important;
+}
+
 .start-page {
     display: flex;
     flex-direction: column;

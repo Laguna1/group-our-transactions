@@ -22,15 +22,7 @@
           <i class="fa fa-sign-out">
         <%= link_to "Log out", logout_path, method: :delete %>
         </i>
-        <% else %>
-        <i class="fa fa-sign-in">
-          <%= link_to "Sign Up", new_user_path %>
-          </i>   |
-          <i class="fa fa-sign-in">
-          <%= link_to "Log in", login_path %> 
-          </i>
        <% end %>
-  
-    <%= yield %>
+   <%= yield %>
   </body>
 </html>
