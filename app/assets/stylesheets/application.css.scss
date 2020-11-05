@@ -20,10 +20,6 @@ body {
     height: 90vh;
     margin: 0;
 }
- 
-a,  a:visited {
-    color: black !important;
-}
 
 a:hover, a:active {
     color: rgb(63, 32, 148) !important;
@@ -44,6 +40,9 @@ i > a,
 .main-title {
     font-family: 'Dancing Script', cursive;
     font-size: 3.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .signup_page {
@@ -55,6 +54,10 @@ i > a,
 .header {
     background-color: #3674BB;
     color: #E0E1E6 !important;
+}
+
+.user-info {
+    flex-direction: row;
 }
 
 .contact .form-control {
@@ -130,3 +133,7 @@ i > a,
 .form-rounded {
     border-radius: 1rem;
     }
+
+.fa* {
+    color: #3674BB !important;
+}

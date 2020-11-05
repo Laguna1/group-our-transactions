@@ -15,14 +15,8 @@
 
   <body>
   
-  <% if logged_in? %>
-  <i class="fa fa-user-circle">
-          <%= link_to "Profile", user_path(current_user) %> 
-          </i> |
-          <i class="fa fa-sign-out">
-        <%= link_to "Log out", logout_path, method: :delete %>
-        </i>
-       <% end %>
+    <%= render 'layouts/navigation'%>
+      
    <%= yield %>
   </body>
 </html>

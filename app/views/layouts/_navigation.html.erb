@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+    <div class="nav user-info">
+   
+       <% if logged_in? %>
+              <i class="fa fa-user-circle mx-2"> </i>
+          <%= link_to "Profile  ", user_path(current_user) %>  |
+             <i class="fa fa-sign-out ml-2"></i>
+          <%= link_to "Log out", logout_path, method: :delete %>
+        <% end %>
+    
+    </div>
+ </nav>
