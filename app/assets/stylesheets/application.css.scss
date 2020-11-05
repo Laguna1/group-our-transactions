@@ -31,30 +31,30 @@ a:hover, a:active {
 
 i > a,
 .btn a {
-    font-size: 1em !important;
+    font-size: 0.8em !important;
+    font-family: Helvetica, sans-serif;
     color: whitesmoke !important;
 }
 
 .signup_page > a {
-    font-size: 1.25rem;
-    color: #017BFF !important;
-}
-
-.login_page > a {
-    font-size: 1.25rem;
-    color: rgb(39,167,69) !important;
-}
-
-.start-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin: 0 15;
+    font-size: 1rem;
+    color: whitesmoke !important;
 }
 
 .main-title {
     font-family: 'Dancing Script', cursive;
     font-size: 3.5em;
+}
+
+.signup_page {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.header {
+    background-color: #3674BB;
+    color: #E0E1E6 !important;
 }
 
 .contact .form-control {
