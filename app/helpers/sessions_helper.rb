@@ -8,11 +8,11 @@ module SessionsHelper
   end
 
   def require_auth
-    unless current_user
-      session[:target] = request.fullpath
-      redirect_to login_path,
-                  notice: 'You need to be logged in to access that page.'
-    end
+    return if current_user
+
+    session[:target] = request.fullpath
+    redirect_to login_path,
+                notice: 'You need to be logged in to access that page.'
   end
 
   # Returns true if the user is logged in, false otherwise.
