@@ -105,6 +105,7 @@ a:active {
   border-radius: 0;
   background-color: #000;
   border-color: #000;
+  
   &:hover {
     background-color: #b80a09;
     border-color: #b80a09;
@@ -114,10 +115,10 @@ a:active {
 // Font Awesome
 
 .contact,
-.form-icons { 
-  position: relative; 
-  input { 
-    text-indent: 30px; 
+.form-icons {
+  position: relative;
+  input {
+    text-indent: 30px;
   }
 
   .fa-user,
@@ -127,15 +128,15 @@ a:active {
     top: 16.5px;
     left: 20px;
     font-size: 15px;
-    color: grey; 
+    color: grey;
   }
 
   .fa-comments {
     position: absolute;
     top: 12px;
     left: 20px;
-    font-size: 15px; 
-    color: grey; 
+    font-size: 15px;
+    color: grey;
   }
 
   .fa-sign-in {
