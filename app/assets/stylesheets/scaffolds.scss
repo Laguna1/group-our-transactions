@@ -7,9 +7,9 @@ body {
   line-height: 18px;
 }
 
-p, 
-ol, 
-ul, 
+p,
+ol,
+ul,
 td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -44,7 +44,7 @@ td {
 }
 
 div {
-  &.field, 
+  &.field,
   &.actions {
     margin-bottom: 10px;
   }

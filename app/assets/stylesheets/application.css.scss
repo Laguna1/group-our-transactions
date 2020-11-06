@@ -5,11 +5,11 @@
 // Bootstrap styles
 
 $focus_background: #fff;
-$focus_border: #555; 
+$focus_border: #555;
 
 %focus {
     background-color: $focus_background;
-    border: 1px solid $focus_border; 
+    border: 1px solid $focus_border;
 }
 
 body {
@@ -27,7 +27,7 @@ i > a,
   color: whitesmoke !important;
 }
 
-a:hover, 
+a:hover,
 a:active {
   color: rgb(63, 32, 148) !important;
 }
@@ -41,7 +41,7 @@ a:active {
   font-family: 'Dancing Script', cursive;
   font-size: 5.5em;
   font-weight: bold !important;
-  color: #3674BB;
+  color: #3674bb;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -54,8 +54,8 @@ a:active {
 }
 
 .header {
-  background-color: #3674BB;
-  color: #E0E1E6 !important;
+  background-color: #3674bb;
+  color: #e0e1e6 !important;
 }
 
 .user-info {
@@ -115,25 +115,29 @@ a:active {
 
 .contact .form-icons { 
   position: relative; 
-  input { text-indent: 30px; }
+  input { text-indent: 30px; 
+}
     .fa-user, .fa-paper-plane, .fa-phone {
       position: absolute;
       top: 16.5px;
       left: 20px;
       font-size: 15px;
-      color: grey; }
+      color: grey; 
+    }
     .fa-comments {
       position: absolute;
       top: 12px;
       left: 20px;
       font-size: 15px; 
-      color: grey; }
+      color: grey; 
+    }
     .fa-sign-in {
       position: absolute;
       top: 12px;
       left: 16px;
       font-size: 18px;
-      color: white; }
+      color: white;
+    }
 }
 
 .form-rounded {
@@ -141,8 +145,8 @@ a:active {
 }
 
 .fa*,
-.creat_date  {
-  color: #3674Bb !important;
+.creat_date {
+  color: #3674bb !important;
 }
 
 .show_link > a {
