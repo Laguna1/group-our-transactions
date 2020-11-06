@@ -8,8 +8,8 @@ $focus_background: #fff;
 $focus_border: #555;
 
 %focus {
-    background-color: $focus_background;
-    border: 1px solid $focus_border;
+  background-color: $focus_background;
+  border: 1px solid $focus_border;
 }
 
 body {
@@ -83,17 +83,17 @@ a:active {
 
 .contact,
 .form-control:focus {
-  @extend %focus; 
+  @extend %focus;
 }
 
 .contact textarea,
 .form-control:focus {
-  @extend %focus; 
+  @extend %focus;
 }
 
 .contact textarea.form-control {
   height: auto;
-  width: 90%; 
+  width: 90%;
   padding-top: 9px;
   padding-left: 45px;
 }
@@ -101,7 +101,7 @@ a:active {
 .contact button.btn.btn-danger.btn-lg {
   text-align: right;
   min-width: 116px;
-  font-size: 14px; 
+  font-size: 14px;
   border-radius: 0px;
   background-color: #000;
   border-color: #000;
@@ -113,31 +113,37 @@ a:active {
 
 // Font Awesome
 
-.contact .form-icons { 
+.contact,
+.form-icons { 
   position: relative; 
   input { text-indent: 30px; 
 }
-    .fa-user, .fa-paper-plane, .fa-phone {
-      position: absolute;
-      top: 16.5px;
-      left: 20px;
-      font-size: 15px;
-      color: grey; 
-    }
-    .fa-comments {
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      font-size: 15px; 
-      color: grey; 
-    }
-    .fa-sign-in {
-      position: absolute;
-      top: 12px;
-      left: 16px;
-      font-size: 18px;
-      color: white;
-    }
+
+.fa-user,
+.fa-paper-plane,
+.fa-phone {
+  position: absolute;
+  top: 16.5px;
+  left: 20px;
+  font-size: 15px;
+  color: grey; 
+}
+
+.fa-comments {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 15px; 
+  color: grey; 
+}
+
+.fa-sign-in {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 18px;
+  color: white;
+}
 }
 
 .form-rounded {
