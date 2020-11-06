@@ -24,6 +24,13 @@
     </p> 
 <br>
      </div>
+
+    
 <%= link_to 'NEW GROUP', new_group_path, class: "btn btn-lg btn-block btn-success btn-outline-light" %>
   
+  <%= link_to user_path(current_user) do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-2x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
 </div>

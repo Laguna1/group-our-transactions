@@ -1,8 +1,22 @@
-<div class="container text-center">
-<h1>New Group</h1>
-
+<div class="text-center">
+  <div class="display-4 py-2 header text-bold">
+      New Group
+    </div>
+    <div class="my-5">
 <%= render 'form', group: @group %>
-<i class="fa fa-backward">
-<%= link_to 'Back', groups_path %>
-</i>
+</div>
+<div>
+<%= link_to groups_path do %> 
+            <span class="button text-success">
+             <i class="fa fa-backward fa-2x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+</div>
+<div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-2x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>
 </div>
