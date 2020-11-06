@@ -3,7 +3,8 @@
 
 # Group Our Transactions app with Ruby on Rails
 
-> This repo includes code for app with basic styling.
+> This repo includes code for app where user can create account and group his payments with his family or friends.
+> User also can create payment that are not attached with a specific group.
 
 
 ## Live Demo
@@ -51,7 +52,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 
@@ -76,10 +77,12 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+You can access all the design info - color, typography, layouts - at this link:
 
-## 📝 License
+[Design idea](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding)
 
-TBA
+Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
+I made some changes to this design.
 
 # group-our-transactions
