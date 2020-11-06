@@ -102,12 +102,12 @@ a:active {
   text-align: right;
   min-width: 116px;
   font-size: 14px;
-  border-radius: 0px;
+  border-radius: 0;
   background-color: #000;
   border-color: #000;
   &:hover {
-    background-color: #b80a09; 
-    border-color: #b80a09; 
+    background-color: #b80a09;
+    border-color: #b80a09;
   }
 }
 
@@ -116,34 +116,35 @@ a:active {
 .contact,
 .form-icons { 
   position: relative; 
-  input { text-indent: 30px; 
-}
+  input { 
+    text-indent: 30px; 
+  }
 
-.fa-user,
-.fa-paper-plane,
-.fa-phone {
-  position: absolute;
-  top: 16.5px;
-  left: 20px;
-  font-size: 15px;
-  color: grey; 
-}
+  .fa-user,
+  .fa-paper-plane,
+  .fa-phone {
+    position: absolute;
+    top: 16.5px;
+    left: 20px;
+    font-size: 15px;
+    color: grey; 
+  }
 
-.fa-comments {
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-size: 15px; 
-  color: grey; 
-}
+  .fa-comments {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 15px; 
+    color: grey; 
+  }
 
-.fa-sign-in {
-  position: absolute;
-  top: 12px;
-  left: 16px;
-  font-size: 18px;
-  color: white;
-}
+  .fa-sign-in {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 18px;
+    color: white;
+  }
 }
 
 .form-rounded {
