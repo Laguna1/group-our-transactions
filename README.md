@@ -79,7 +79,7 @@ Give a ⭐️ if you like this project!
 
 You can access all the design info - color, typography, layouts - at this link:
 
-[Design idea](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding)
+[Design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding)
 
 Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
