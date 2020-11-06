@@ -1,29 +1,45 @@
 <div class="text-center">
       <div class="display-4 py-2 header text-bold">
+         <span>
          External Transactions
+         </span><br>
+     <span class="h5 text-uppercase">Total amount:
+     <span class="h4 font-weight-bold">  $ 
+     <%= @external_total %>
+     </span>
      </div>
-     <p>
-        Total amount: $ <%= @external_total %>
-     </p>
-     <p>
-        <% @external_transactions.each do |transaction| %>
-   
-              <p> <%=link_to transaction.name %> </p>
-              <p>$<%= transaction.amount %></p>
-              <p><%= transaction.created_at %></p>
-              <br>
-              <i class="fa fa-edit">
-              <%= link_to "Edit", edit_transaction_path(transaction) %></i>  |
-              <i class="fa fa-trash">
-              <%= link_to "Delete", transaction_path(transaction), data: {confirm: "Are you sure?"}, :method => :delete %>
-              </i>
-        <br> <br>
-         <hr><hr>
-    <% end %>
-     <br> 
-    
-  <p>
- 
 
-  <%= link_to "Add new", new_transaction_path , :class => "btn btn-success" %>
+
+      <table class="table table-striped h4">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th> 
+    </tr>
+  </thead>
+  <tbody>
+        <% @external_transactions.each do |transaction| %>
+           <tr>
+             <td><%= transaction.name.capitalize %> 
+              </td>
+               <td>$<%= transaction.amount %></td>
+               <td><%= transaction.created_at %></td>
+            
+             <td>  <i class="fa fa-edit fa-2x mx-3 text-warning">
+              <%= link_to 'Edit', edit_transaction_path(transaction) %></i>||
+              <i class="fa fa-trash fa-2x ml-3 text-warning">
+              <%= link_to 'Delete', transaction_path(transaction), data: {confirm: "Are you sure?"}, :method => :delete %>
+              </i>
+              </td>
+              </tr>
+    <% end %>
+      </tbody>
+     
+</table>
+    
+  
+ </div>
+
+  <%= link_to "ADD NEW", new_transaction_path , :class => "btn btn-lg btn-block btn-success" %>
 </div>

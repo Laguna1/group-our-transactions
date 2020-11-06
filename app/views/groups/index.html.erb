@@ -4,19 +4,19 @@
     </div>
     <div class="mt-3">
        <% @groups.each do |group| %>
-         <span class="h3">
+         <span class="mx-3 h4">
            <%= link_to group.name.capitalize, group %><br>
          </span>
-         <i class= "<%= group.icon %> fa-2x mr-5 text-warning" ></i>
-         <span class="creat_date">
+         <i class= "<%= group.icon %> fa-3x mr-5 text-warning" ></i>
+         <span class="creat_date mx-3">
            <%= group.created_at %>
           </span>
     <% if current_user.id == group.user.id %> 
-      <i class="fa fa-edit fa-2x ml-5 text-warning">
-       <%= link_to '', edit_group_path(group) %>
+      <i class="fa fa-edit fa-2x mx-5  text-warning">
+       <%= link_to 'Edit', edit_group_path(group) %>
        </i>
-       <i class="fa fa-trash fa-2x ml-5 text-warning">
-       <%= link_to '', group, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+       <i class="fa fa-trash fa-2x mx-5 text-warning">
+       <%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %><br>
        </i>
      <% end %>
      <hr>
@@ -24,6 +24,6 @@
     </p> 
 <br>
      </div>
-<%= link_to 'New Group', new_group_path, class: "btn btn-lg btn-block btn-success btn-outline-light" %>
+<%= link_to 'NEW GROUP', new_group_path, class: "btn btn-lg btn-block btn-success btn-outline-light" %>
   
 </div>

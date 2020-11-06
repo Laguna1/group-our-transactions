@@ -1,38 +1,58 @@
-<div class="container text-center">
-
-<p id="notice"><%= notice %></p>
- <h2>"<%= @group.name %>"</h2>
+<div class="text-center">
+   <div class="display-4 py-2 header text-bold">
+       DETAILS
+    </div>
+    <div class="mt-5"> Group:
+ <span class="h1 text-uppercase text-primary ml-3"><%= @group.name %></span>
+ </div>
 <p>
   <strong>Created at:</strong>
   <%= @group.created_at %>
 </p>
  
 <% if @group.transactions.any? %>
-<p>All Transactions in <%= @group.name %></p>
+<div class="h5">All Transactions in<span class="text-primary"> <%= @group.name %></span></div>
+  <table class="table table-striped h4">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th> 
+      <th scope="col"></th>
+      <th scope="col"></th> 
+    </tr>
+  </thead>
+  <tbody>
   <% @group.transactions.each do |transaction| %>
+  <tr>
  <%= link_to transaction do %>
-        <p><%= transaction.name.capitalize %></p>
+        <td><%= transaction.name.capitalize %></td>
          <% end %>
-        <p>  by <strong><%= transaction.user.name %></strong></p> 
-         <p>$<%= transaction.amount %></p><br>
-      <p><%= transaction.created_at %>
-    <%= link_to "Show this transaction", transaction %> |
+        <td>  by  <strong><%= transaction.user.name %></strong></td> 
+         <td>$<%= transaction.amount %></td>
+      <td><%= transaction.created_at %></td>
+    <td><span class="show_link"> <%= link_to "Show", transaction %></span> ||
       <% if current_user.id == transaction.user.id %>
-      <i class="fa fa-edit">
+       <i class="fa fa-edit text-warning mr-3">
         <%= link_to "Edit", edit_transaction_path(transaction) %> 
-        </i>|
-        <i class="fa fa-trash">
+        </i>||
+        <i class="fa fa-trash text-warning">
         <%= link_to "Destroy", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
-        </i>
+        </i></td>
+       
       <% end %>
+      </tr>
   <% end %>
+  </tbody>
+     
+</table>
   <% else %>
   <p>There are no transactions for this group.</p>
   <% end %>
-<i class="fa fa-edit">
-<%= link_to 'Edit group', edit_group_path(@group) %> 
-</i>|
-<i class="fa fa-backward">
-<%= link_to 'Back to Groups list', groups_path %>
+<i class="fa fa-edit fa-3x text-warning mr-5">
+<%= link_to 'Edit', edit_group_path(@group) %> 
+</i>||
+<i class="fa fa-backward fa-3x mx-5 text-warning">
+<%= link_to 'Back', groups_path %>
 </i>
 </div>

@@ -1,21 +1,23 @@
-<div class="container text-center">
+<div class="text-center">
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="h4 py-2 header text-bold">
+         <span> DETAILS
+         </span><br>
+         </div>
   <strong>Name:</strong>
   <%= @transaction.name %>
 </p>
 
 <p>
-  <strong>Amount : </strong>
+  <strong>Total payment: </strong>
   $<%= @transaction.amount %>
 </p>
 
 <p><%= @transaction.created_at %></p>
-<i class="fa fa-edit">
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> </i> |
+<i class="fa fa-edit fa-2x mx-3 text-warning"> </i>
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> ||
 
-<i class="fa fa-backward">
+<i class="fa fa-backward fa-2x mx-3 text-warning">
 <%= link_to 'Back', transactions_path %>
 </i>
 </div>

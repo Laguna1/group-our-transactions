@@ -9,7 +9,7 @@
             <% end %>
      </span>
   </div>
-  <table class="table table-striped">
+  <table class="table table-striped h4">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -22,6 +22,7 @@
   <tbody>
     <% @transactions.each do |transaction| %>
      <tr>
+        <td></td>
         <td><%= link_to transaction do %>
                <%= transaction.name.capitalize %><br>
             <% end %></td>
