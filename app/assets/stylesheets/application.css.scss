@@ -105,7 +105,7 @@ a:active {
   border-radius: 0;
   background-color: #000;
   border-color: #000;
-  
+
   &:hover {
     background-color: #b80a09;
     border-color: #b80a09;
@@ -117,6 +117,7 @@ a:active {
 .contact,
 .form-icons {
   position: relative;
+
   input {
     text-indent: 30px;
   }
