@@ -12,9 +12,7 @@
            <%= group.created_at %>
           </span>
     <% if current_user.id == group.user.id %> 
-      <i class="fa fa-edit fa-2x mx-5  text-warning">
-       <%= link_to 'Edit', edit_group_path(group) %>
-       </i>
+      
        <i class="fa fa-trash fa-2x mx-5 text-warning">
        <%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %><br>
        </i>

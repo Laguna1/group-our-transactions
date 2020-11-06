@@ -31,14 +31,13 @@
         <td>  by  <strong><%= transaction.user.name %></strong></td> 
          <td>$<%= transaction.amount %></td>
       <td><%= transaction.created_at %></td>
-    <td><span class="show_link"> <%= link_to "Show", transaction %></span> ||
+    <td><span class="show_link"> <%= link_to "Show", transaction %></span>
       <% if current_user.id == transaction.user.id %>
-       <i class="fa fa-edit text-warning mr-3">
-        <%= link_to "Edit", edit_transaction_path(transaction) %> 
-        </i>||
+        ||
         <i class="fa fa-trash text-warning">
-        <%= link_to "Destroy", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
-        </i></td>
+        <%= link_to "Delete", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
+        </i>
+        </td>
        
       <% end %>
       </tr>
@@ -49,10 +48,18 @@
   <% else %>
   <p>There are no transactions for this group.</p>
   <% end %>
-<i class="fa fa-edit fa-3x text-warning mr-5">
-<%= link_to 'Edit', edit_group_path(@group) %> 
-</i>||
-<i class="fa fa-backward fa-3x mx-5 text-warning">
-<%= link_to 'Back', groups_path %>
-</i>
+<div>
+<%= link_to groups_path do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+</div>
+<div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-success">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>
 </div>
