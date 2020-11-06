@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-   <div class="field">
+   <div class="field mb-2">
     <%= form.label :name %>
     <%= form.text_field :name %>
    </div>
@@ -23,12 +23,14 @@
    <div class="form-group">
     <%= form.label 'Group' %>
     <select id="transaction_group_id" name="transaction[group_id]" class="custom-select" id="inputGroupSelect01">
-      <option value='<%= nil%>'></option>
+      <option value='<%= nil%>'>External Transaction</option>
       <% Group.all.each do |group| %>
         <option value="<%= group.id %>"><%= group.name %></option>
       <% end %>
     </select>
   </div>
+  <div class="btn btn-success">
   <%= form.submit class: "submit" %>
+  </div>
 <% end %>
 </div>

@@ -43,3 +43,10 @@
 
   <%= link_to "ADD NEW", new_transaction_path , :class => "btn btn-lg btn-block btn-success" %>
 </div>
+<div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-2x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>

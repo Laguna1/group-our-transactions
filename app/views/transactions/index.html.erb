@@ -30,10 +30,10 @@
         <td><%= transaction.created_at%></td>
         <td> <% if current_user.id == transaction.user.id%>
             <i class="fa fa-edit fa-2x  text-warning">
-               <%= link_to '', edit_transaction_path(transaction) %>
+               <%= link_to 'Edit', edit_transaction_path(transaction) %>
                </i> ||
                <i class="fa fa-trash fa-2x  text-warning">
-               <%= link_to '', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
+               <%= link_to 'Back', transaction, method: :delete, data: { confirm: 'Are you sure?' } %>
                </i>
         </td>
             <% end %>
@@ -44,4 +44,9 @@
 </table>
 </div>
 <%= link_to 'Add Transaction', new_transaction_path, class: "btn btn-lg btn-block btn-success" %>
+ <%= link_to user_path(current_user) do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-2x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
 </div>
