@@ -26,8 +26,7 @@
                <td>$<%= transaction.amount %></td>
                <td><%= transaction.created_at %></td>
             
-             <td>  <i class="fa fa-edit fa-2x mx-3 text-warning">
-              <%= link_to 'Edit', edit_transaction_path(transaction) %></i>||
+             <td>  
               <i class="fa fa-trash fa-2x ml-3 text-warning">
               <%= link_to 'Delete', transaction_path(transaction), data: {confirm: "Are you sure?"}, :method => :delete %>
               </i>
