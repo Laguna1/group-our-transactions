@@ -1,4 +1,5 @@
-class GroupsController < ApplicationController
+class GroupsController < ApplicationController 
+  include GroupsHelper
   before_action :set_group, only: %i[show edit update destroy]
 
   # GET /groups
