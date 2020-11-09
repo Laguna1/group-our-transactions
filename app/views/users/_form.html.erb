@@ -1,0 +1,37 @@
+<div class="container text-center">
+  <%= form_for(user, :html => { class: "contact"}) do |f| %>
+    <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-around">
+  <div class="form-group form-icons text-center">
+    <span class="fa fa-user"></span>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name*" %>
+  </div>
+
+  <div class="form-group form-icons text-center">
+    <span class="fa fa-user"></span>
+    <%= f.text_field :username, class: "form-control", placeholder: "Username*"  %>
+  </div>
+
+  <div class="form-group form-icons text-center">
+    <span class="fa fa-paper-plane"></span>
+    <%= f.email_field :email, class: "form-control", placeholder: "Your Email*" %>
+  </div>
+ 
+  <div class="form-group form-icons text-center mb-0">
+       
+      <%= f.button "SUBMIT", class: "btn btn-primary btn-block btn-lg text-center", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>  Just a moment..." } %>
+  </div>
+  <% end %>
+</div>
+</div>

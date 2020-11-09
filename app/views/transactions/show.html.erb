@@ -1,0 +1,37 @@
+<div class="text-center">
+
+<div class="display-4 py-2 header text-bold">
+         <span> DETAILS
+         </span>
+         </div>
+  <div class="mt-5"> Transaction`s Name:
+    <span class="h2 text-uppercase text-primary ml-3">
+       <%= @transaction.name %>
+       </span>
+   </div>
+
+<p>
+  Total payment: 
+    <strong>$<%= @transaction.amount %></strong>
+</p>
+
+<p> 
+<strong>Created at:</strong>
+  <%= @transaction.created_at %>
+  </p>
+<div>
+  <%= link_to transactions_path do %>
+    <span class="button text-warning"> 
+      <i class="fa fa-backward fa-3x mx-3"  aria-hidden="true"></i>
+    </span> 
+  <%end %> 
+  </div>
+  <div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-success">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>
+
+</div>

@@ -1,0 +1,64 @@
+<div class="text-center">
+   <div class="display-4 py-2 header text-bold">
+       DETAILS
+    </div>
+    <div class="mt-5"> Group:
+ <span class="h1 text-uppercase text-primary ml-3"><%= @group.name %></span>
+ </div>
+<p>
+  <strong>Created at:</strong>
+  <%= @group.created_at %>
+</p>
+ 
+<% if @group.transactions.any? %>
+<div class="h5">All Transactions in<span class="text-primary"> <%= @group.name %></span></div>
+  <table class="table table-striped h4">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th> 
+      <th scope="col"></th>
+      <th scope="col"></th> 
+    </tr>
+  </thead>
+  <tbody>
+  <% @group.transactions.each do |transaction| %>
+  <tr>
+ <%= link_to transaction do %>
+        <td><%= transaction.name.capitalize %></td>
+         <% end %>
+        <td>  by  <strong><%= transaction.user.name %></strong></td> 
+         <td>$<%= transaction.amount %></td>
+      <td><%= transaction.created_at %></td>
+    <td><span class="show_link"> <%= link_to "Show", transaction %></span>
+      <% if current_user.id == transaction.user.id %>
+        ||
+        <i class="fa fa-trash text-warning">
+        <%= link_to "Delete", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
+        </i>  
+      <% end %>
+      </td>
+      </tr>
+  <% end %>
+  </tbody>
+     
+</table>
+  <% else %>
+  <p>There are no transactions for this group.</p>
+  <% end %>
+<div>
+<%= link_to groups_path do %> 
+            <span class="button text-warning">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+</div>
+<div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-success">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>
+</div>

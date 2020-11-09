@@ -1,0 +1,30 @@
+<div class="container text-center">
+<%= form_for @group do |f| %>
+  <% if @group.errors.any? %>
+    <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= f.text_field :name, class: "form-control", placeholder: "Name for group*"  %>
+   </div>
+  <div class="field m-2">
+    <%= f.radio_button :icon, 'fa fa-phone fa-2x' %><i class="fa fa-phone fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-graduation-cap' %> <i class="fa fa-graduation-cap fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-birthday-cake' %><i class="fa fa-birthday-cake fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-bed' %> <i class="fa fa-bed fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-cutlery' %> <i class="fa fa-cutlery fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-shopping-cart fa-2x' %> <i class="fa fa-shopping-cart fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-tree' %> <i class="fa fa-tree fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-bus' %><i class="fa fa-bus fa-3x mx-3" aria-hidden="true"></i>
+    <%= f.radio_button :icon, 'fa fa-taxi fa-2x' %> <i class="fa fa-taxi fa-3x mx-3" aria-hidden="true"></i>
+    
+  </p>
+  <%= f.submit class: "submit btn btn-lg btn-success" %>
+
+</div>
+
+<% end %>

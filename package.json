@@ -1,5 +1,11 @@
 {
   "name": "group-our-transactions",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "stylelint-scss": "^3.18.0"
+  },
+  "devDependencies": {
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0"
+  }
 }

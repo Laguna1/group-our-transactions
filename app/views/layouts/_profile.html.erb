@@ -1,0 +1,15 @@
+
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-primary">
+             <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+            </span>
+       
+           ||
+  
+          <%= link_to logout_path, method: :delete do %>
+          <span class="button text-primary">
+             <i class="fa fa-sign-out  fa-2x ml-2 text-primary" aria-hidden="true"></i>
+            </span>
+          <%end %> 
+     
+<%end %> 

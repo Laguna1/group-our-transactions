@@ -1,0 +1,51 @@
+<div class="text-center">
+      <div class="display-4 py-2 header text-bold">
+         <span>
+         My External Transactions
+         </span><br>
+     <span class="h5 text-uppercase">Total amount:
+     <span class="h4 font-weight-bold">  $ 
+     <%= @external_total %>
+     </span>
+     </div>
+
+
+      <table class="table table-striped h4">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th> 
+    </tr>
+  </thead>
+  <tbody>
+        <% @external_transactions.each do |transaction| %>
+           <tr>
+             <td><%= transaction.name.capitalize %> 
+              </td>
+               <td>$<%= transaction.amount %></td>
+               <td><%= transaction.created_at %></td>
+            
+             <td>  
+              <i class="fa fa-trash fa-2x ml-3 text-warning">
+              <%= link_to 'Delete', transaction_path(transaction), data: {confirm: "Are you sure?"}, :method => :delete %>
+              </i>
+              </td>
+              </tr>
+    <% end %>
+      </tbody>
+     
+</table>
+    
+  
+ </div>
+
+  <%= link_to "ADD NEW", new_transaction_path , :class => "btn btn-lg btn-block btn-success" %>
+</div>
+<div>
+<%= link_to user_path(current_user) do %> 
+            <span class="button text-success">
+             <i class="fa fa-backward fa-3x  mt-3" aria-hidden="true"></i>
+            </span>
+          <%end %>  
+          </div>

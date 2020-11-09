@@ -1,0 +1,164 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "font-awesome-sprockets";
+
+// Bootstrap styles
+
+$focus_background: #fff;
+$focus_border: #555;
+
+%focus {
+  background-color: $focus_background;
+  border: 1px solid $focus_border;
+}
+
+body {
+  background-color: rgb(227, 233, 231);
+  text-align: center;
+  font-family: "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 90vh;
+  margin: 0;
+}
+
+i > a,
+.btn a {
+  font-size: 0.8em !important;
+  font-family: Helvetica, sans-serif;
+  color: whitesmoke !important;
+}
+
+a:hover,
+a:active {
+  color: rgb(63, 32, 148) !important;
+}
+
+.signup_page > a {
+  font-size: 1rem;
+  color: whitesmoke !important;
+}
+
+.main-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5.5em;
+  font-weight: bold !important;
+  color: #3674bb;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.signup_page {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.header {
+  background-color: #3674bb;
+  color: #e0e1e6 !important;
+}
+
+.user-info {
+  flex-direction: row;
+}
+
+.contact .form-control {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #666;
+  background: #f9f9f9;
+  background-image: none;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.contact,
+.form-control:focus {
+  @extend %focus;
+}
+
+.contact textarea,
+.form-control:focus {
+  @extend %focus;
+}
+
+.contact textarea.form-control {
+  height: auto;
+  width: 90%;
+  padding-top: 9px;
+  padding-left: 45px;
+}
+
+.contact button.btn.btn-danger.btn-lg {
+  text-align: right;
+  min-width: 116px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #000;
+  border-color: #000;
+
+  &:hover {
+    background-color: #b80a09;
+    border-color: #b80a09;
+  }
+}
+
+// Font Awesome
+
+.contact,
+.form-icons {
+  position: relative;
+  border: none;
+
+  input {
+    text-indent: 30px;
+  }
+
+  .fa-user,
+  .fa-paper-plane,
+  .fa-phone {
+    position: absolute;
+    top: 16.5px;
+    left: 20px;
+    font-size: 15px;
+    color: grey;
+  }
+
+  .fa-comments {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 15px;
+    color: grey;
+  }
+
+  .fa-sign-in {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 18px;
+    color: white;
+  }
+}
+
+.form-rounded {
+  border-radius: 1rem;
+}
+
+.fa*,
+.creat_date {
+  color: #3674bb !important;
+}
+
+.show_link > a {
+  color: whitesmoke !important;
+}
