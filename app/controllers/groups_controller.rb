@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  include GroupsHelper
   before_action :set_group, only: %i[show edit update destroy]
 
   # GET /groups
@@ -57,13 +56,7 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1
   # DELETE /groups/1.json
-  def destroy
-    @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  def destroy; end
 
   private
 
